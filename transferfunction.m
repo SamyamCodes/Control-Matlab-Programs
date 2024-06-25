@@ -13,3 +13,15 @@ deno = [2 3 4 5 6 3 3 ];
 >> i=sqrt(-1);
 >> p=[-3+4*i;-3-4*i;-2;-1];
 >> [num,den]=zp2tf(z,p,k)
+
+/* State State Representation */
+ num=[1 7 2]; den=[1 9 26 24];
+>> [A B C D]=tf2ss(num,den);
+
+
+ A=[0 1 0; 0 0 1; -1 -2 -3];
+>> B=[10; 0; 0];
+>> C=[1 0 0]; D=[0];
+>> [num,den]=ss2tf(A,B,C,D);
+>> sys=tf(num,den)
+
