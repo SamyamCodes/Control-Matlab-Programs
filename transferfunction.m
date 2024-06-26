@@ -19,9 +19,10 @@ deno = [2 3 4 5 6 3 3 ];
 >> [A B C D]=tf2ss(num,den);
 
 
- A=[0 1 0; 0 0 1; -1 -2 -3];
->> B=[10; 0; 0];
->> C=[1 0 0]; D=[0];
->> [num,den]=ss2tf(A,B,C,D);
->> sys=tf(num,den)
+A = [0 1  1; 0 0 1; -2 -3 -4];
+B = [10; 0; 0];
+C = [1 2 0];
+D = [0];
+[num, den] = ss2tf(A,B,C,D);
+sys = tf(num, den)
 
